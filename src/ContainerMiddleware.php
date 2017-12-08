@@ -18,7 +18,7 @@ class ContainerMiddleware implements MiddlewareInterface
     /**
      * The container.
      *
-     * @var \Ellipse\Container\ReflectionContainer
+     * @var \Psr\Container\ContainerInterface
     */
     private $container;
 
