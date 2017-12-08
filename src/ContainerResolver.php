@@ -11,7 +11,7 @@ class ContainerResolver
     /**
      * The container.
      *
-     * @var \Ellipse\Container\ReflectionContainer
+     * @var \Psr\Container\ContainerInterface
     */
     private $container;
 
@@ -25,17 +25,6 @@ class ContainerResolver
     {
         $this->container = $container;
         $this->delegate = $delegate;
-    }
-
-    /**
-     * Return whether the element is a middleware class name.
-     *
-     * @param mixed $element
-     * @return bool
-     */
-    public function canHandle($element): bool
-    {
-        return is_string($element) && is_a($element, MiddlewareInterface::class, true);
     }
 
     /**
