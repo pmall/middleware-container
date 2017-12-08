@@ -46,7 +46,7 @@
         "binder": [
             {
                 "type": "class",
-                "value": "Ellipse\\Middleware\\ContainerFactoryServiceProvider"
+                "value": "Ellipse\\Middleware\\ContainerResolverServiceProvider"
             }
         ]
     }
