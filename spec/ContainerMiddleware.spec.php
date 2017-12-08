@@ -61,12 +61,10 @@ describe('ContainerMiddleware', function () {
         class TestMiddleware implements MiddlewareInterface
         {
             private $dependency1;
-            private $dependency2;
 
             public function __construct(TestDependency1 $dependency1, TestDependency2 $dependency2)
             {
                 $this->dependency1 = $dependency1;
-                $this->dependency2 = $dependency2;
             }
 
             public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
@@ -98,9 +96,9 @@ describe('ContainerMiddleware', function () {
 
     });
 
-    describe('->__invoke()', function () {
+    describe('->process()', function () {
 
-        it('should inject the request and request handler into the middleware dependency', function () {
+        it('should proxy the middleware ->process method by injecting the request and the handler', function () {
 
             $dependency2 = new TestDependency2;
 
